@@ -1,8 +1,9 @@
-# 🚢 File Ark
+# <img width="766" height="150" alt="fileark" src="https://github.com/user-attachments/assets/0c22f56d-173e-434b-a03c-e41aa513f4f9" />
 
 **File Ark** is a desktop application that helps you quickly harvest and organize important files before a system refresh, migration, or backup. Built with Electron, it works on Windows, macOS, and Linux.
+It uses file extensions (by category) with some filesize gates to prevent useless stub files (like 1px gifs etc.). Because it doesn't care about filenames, but only extensions and sizes, it's fast to find all your files.
 
-![File Ark Screenshot](screenshot.png)
+<img width="586" height="1029" alt="image" src="https://github.com/user-attachments/assets/875fddc1-f197-4da3-838f-c18c5c6a9f85" />
 
 ## ✨ Features
 
@@ -95,6 +96,11 @@ Output Folder/
 │   └── PNG/
 │       └── photo2.png
 └── _manifest.json
+```
+
+With **Embed original folder path in file comments (where supported)** enabled:
+```
+The system will create a text file alongside the original file, named the same as the file, with the original file location. This allows you to use full-text search tools to locate files that might have been insufficiently named (for example, "mockup.jpg" or "photo_1876_ex.jpg) to be findable, using elements from their original pathnames (projectX\mockup.jpg, or mywedding\photo_1876_ex.jpg)
 ```
 
 ## 📋 Supported File Types
