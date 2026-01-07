@@ -5,7 +5,7 @@ It uses file extensions (by category) with some filesize gates to prevent useles
 
 <img width="586" height="1029" alt="image" src="https://github.com/user-attachments/assets/875fddc1-f197-4da3-838f-c18c5c6a9f85" />
 
-## ✨ Features
+## Features
 
 - **Smart File Discovery** - Scans folders for creative files (images, vectors, design files, 3D, video, audio, documents)
 - **Category-Based Organization** - Automatically sorts files into folders by type
@@ -16,7 +16,7 @@ It uses file extensions (by category) with some filesize gates to prevent useles
 - **Cancel Anytime** - Stop mid-copy with the "Abandon Ship!" button
 - **Manifest File** - Generates `_manifest.json` with full copy report
 
-## 📥 Installation
+## Installation
 
 ### Download Release
 1. Go to [Releases](https://github.com/KDB-USJP/FileArk/releases)
@@ -33,7 +33,7 @@ npm install
 npm start
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Basic Workflow
 
@@ -47,11 +47,12 @@ npm start
 
 Click the **▶** arrow next to any category to expand it and see individual file extensions. Uncheck any you don't need.
 
-![Category Expansion](category-expansion.png)
+<img width="522" height="701" alt="image" src="https://github.com/user-attachments/assets/ed77c03c-a315-47ef-85e0-5785df190ade" />
 
-### Settings ⚙️
 
-Click the gear icon to access settings:
+### Settings
+
+Click the gear icon ⚙️ to access settings:
 
 | Setting | Description |
 |---------|-------------|
@@ -61,7 +62,8 @@ Click the gear icon to access settings:
 | **Ignore System** | Skips Windows, Program Files, AppData, etc. |
 | **Custom Exclude** | Add folder names to skip (comma-separated) |
 
-![Settings Panel](settings.png)
+<img width="508" height="480" alt="image" src="https://github.com/user-attachments/assets/f3e2fddb-8af0-4990-ae8c-f37b4f15b5f5" />
+
 
 ### Custom Extensions
 
@@ -115,7 +117,7 @@ The system will create a text file alongside the original file, named the same a
 | Audio | mp3, wav, aiff, flac, ogg, m4a, aac |
 | Documents | doc, docx, xls, xlsx, ppt, pptx, txt, md, rtf |
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
