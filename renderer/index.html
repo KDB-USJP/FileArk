@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <title>File Ark</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <img src="../file_ark_logo.png" alt="File Ark" class="header-logo">
+            <div class="header-right">
+                <span class="version" id="version">v1.0.0</span>
+                <button id="btnSettings" class="btn-icon" title="Settings">⚙️</button>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Source & Destination -->
+            <section class="paths-section">
+                <div class="path-row">
+                    <label>Source:</label>
+                    <input type="text" id="sourcePath" readonly placeholder="Select folder to scan...">
+                    <button id="btnSelectSource" class="btn btn-secondary">Browse</button>
+                </div>
+                <div class="path-row">
+                    <label>Output:</label>
+                    <input type="text" id="destPath" readonly placeholder="Select destination folder...">
+                    <button id="btnSelectDest" class="btn btn-secondary">Browse</button>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section class="categories-section">
+                <h3>📁 Categories</h3>
+                <div class="category-grid" id="categoryGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Custom Extensions -->
+            <section class="custom-section">
+                <label for="customExt">Custom extensions:</label>
+                <input type="text" id="customExt" placeholder=".kra, .procreate, .aseprite">
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="action-section">
+                <div class="action-buttons">
+                    <button id="btnStart" class="btn btn-primary btn-large" disabled>
+                        🚢 All Aboard!
+                    </button>
+                    <button id="btnCancel" class="btn btn-danger btn-large hidden">
+                        ✕ Abandon Ship!
+                    </button>
+                </div>
+            </section>
+
+            <!-- Progress -->
+            <section class="progress-section" id="progressSection">
+                <div class="progress-animals" id="progressAnimals"></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Ready</div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ Settings</h2>
+                <button id="btnCloseSettings" class="btn-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <h3>Output Options</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="subfolderByExt">
+                        <span>Create subfolders by file extension (Images/PNG, Images/JPG)</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="embedOriginalPath">
+                        <span>Embed original folder path in file comments (where supported)</span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <h3>Folder Exclusions</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="excludeTempCache" checked>
+                        <span>Ignore Temp and Cache folders</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="excludeSystem" checked>
+                        <span>Ignore System folders (Windows, Program Files, etc.)</span>
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <h3>Custom Exclude Folders</h3>
+                    <p class="setting-hint">Folder names to skip (comma-separated)</p>
+                    <input type="text" id="customExcludeFolders" placeholder="node_modules, .git, backups">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnResetSettings" class="btn btn-secondary">Reset Defaults</button>
+                <button id="btnSaveSettings" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+{
+  "name": "file-ark",
+  "version": "1.0.0",
+  "description": "File harvester for system refresh backups",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.kdb.fileark",
+    "productName": "File Ark",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*",
+      "file_ark_logo.png"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "file_ark_icon_2.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "file_ark_icon_2.png",
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "file_ark_icon_2.png",
+      "category": "Utility"
+    }
+  },
+  "keywords": [
+    "backup",
+    "files",
+    "electron",
+    "ark"
+  ],
+  "author": "KDB",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {}
+}
