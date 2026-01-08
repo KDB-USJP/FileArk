@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     strategy:
-      fail-fast: false  # Continue other builds if one fails
+      fail-fast: false
       matrix:
         include:
           - os: windows-latest
@@ -31,7 +31,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      # Linux dependencies for electron-builder
       - name: Install Linux dependencies
         if: matrix.os == 'ubuntu-latest'
         run: |
@@ -41,10 +40,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Build WITHOUT publishing (--publish never)
       - name: Build for ${{ matrix.platform }}
-        run: npm run build:${{ matrix.platform }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx electron-builder --${{ matrix.platform }} --publish never
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -61,6 +59,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
+    permissions:
+      contents: write
     
     steps:
       - name: Download all artifacts
