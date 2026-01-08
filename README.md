@@ -26,6 +26,7 @@ It uses file extensions (by category) with some filesize gates to prevent useles
    - **Linux:** `File Ark.AppImage`
 
 Windows will "Protect you from this program." This is a standard message when running unsigned code; all the code is available here and is not designed to phone home, access the network, or anything else nefarious. I just don't have access to code signing right this moment. When you run the setup in Windows, you will need to choose "Run Anyway" as well as allow Windows cloud services to check the file (good practice anyway) after which it will install:
+
 <img width="667" height="448" alt="image" src="https://github.com/user-attachments/assets/0f18e6d3-da37-4c44-a86f-962a031c1236" />
 
 
