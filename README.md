@@ -19,7 +19,7 @@ It uses file extensions (by category) with some filesize gates to prevent useles
 ## Installation
 
 ### Download Release
-1. Go to [Releases](https://github.com/KDB-USJP/FileArk/actions/runs/20799981464) 
+1. Go to [Releases](https://github.com/KDB-USJP/FileArk/releases/) 
 2. Download the installer for your platform:
    - **Windows:** `File Ark Setup.exe`
    - **macOS:** `File Ark.dmg`
